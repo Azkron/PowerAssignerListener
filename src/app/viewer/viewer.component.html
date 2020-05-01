@@ -1,0 +1,30 @@
+
+
+<div class="requestAssingments" *ngIf="!requestAssingments || requestAssingments == null">
+  <h1>Waiting for socket...</h1>
+</div>
+
+<div class="requestAssingments" *ngIf="requestAssingments">
+<h1>Power request with load : {{requestAssingments.powerRequest.load}}</h1>
+  <p>gas(euro/MWh) : {{requestAssingments.powerRequest.fuels["gas(euro/MWh)"]}}</p>
+  <p>co2(euro/ton) : {{requestAssingments.powerRequest.fuels["co2(euro/ton)"]}}</p>
+  <p>kerosine(euro/MWh) : {{requestAssingments.powerRequest.fuels["kerosine(euro/MWh)"]}}</p>
+  <p>gas(euro/MWh) : {{requestAssingments.powerRequest.fuels["wind(%)"]}}</p>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let powerPlant of requestAssingments.powerRequest.powerplants; index as i;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         Powerplant {{powerPlant.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{requestAssingments.assingments[i].p}} power assinged
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Type : {{powerPlant.type}}</p>
+      <p>Efficiency : {{powerPlant.efficiency}}</p>
+      <p>Minimum power : {{powerPlant.pmin}}</p>
+      <p>Maximum power : {{powerPlant.pmax}}</p>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
