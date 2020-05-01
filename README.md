@@ -4,7 +4,7 @@
 
 This app is simple viewer that connects through a socket to the PowerAssinger webservice (`https://github.com/Azkron/PowerAssinger`) through `https://localhost:5001/assingments`
 
-It simply waits for the PowerAssinger webservice and displays the assingments broadcasted by it. Note that for this exercise the PowerAssinger socket only accepts connections from `http://localhost:4200`
+It simply waits for the PowerAssinger webservice and displays the assingments broadcasted by it in a fancy way. Note that for this exercise the PowerAssinger socket only accepts connections from `http://localhost:4200`
 
 # Build the app
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
